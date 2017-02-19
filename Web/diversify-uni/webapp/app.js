@@ -8,16 +8,16 @@ import angular from 'angular';
  */
 import home from './home';
 import user from './user';
-// import signup from './signup';
-// import login from './login';
-// import map from './map';
+import signup from './signup';
+import login from './login';
+import map from './map';
 
 const REQUIRES = [
   home,
   user,
   signup,
-  // login,
-  // map
+  login,
+  map
 ];
 
 
