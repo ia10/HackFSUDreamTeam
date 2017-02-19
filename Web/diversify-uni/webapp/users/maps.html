@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Complex icons</title>
+    <style>
+      #map {
+        height: 100%;
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 1,
+          center: {lat: -33.9, lng: 151.2}
+        });
+
+        setMarkers(map);
+        }
+
+
+        var locations = [
+        ['Belgium', 50, 51, 4],
+        ['Brazil', -14.23, -51.92, 5],
+        ['China', 46.8,104.1, 3],
+        ['Pakistan', 30.37, 69.345, 2],
+        ['Somalia', 5.152, 46.199, 1],
+        ['Rwanda', -1.94, 29.87, 6],
+        ['Mali', 17.57, -3.99, 7],
+        ['Chile', -35.67, -71.542, 8],
+        ['Australia',  -25.27, 133.77, 9]
+        ];
+
+      function setMarkers(map) {
+        // Adds markers to the map.
+
+        // Marker sizes are expressed as a Size of X,Y where the origin of the image
+        // (0,0) is located in the top left of the image.
+
+        // Origins, anchor positions and coordinates of the marker increase in the X
+        // direction to the right and in the Y direction down.
+        var image = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/3.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+        };
+
+       var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">John Doe</h1>'+
+      '<div id="bodyContent">'+
+      '<p>Country: <b>Australia</b> </br> Languages: <b>Chinese</b> and <b>Japanese</br> ' +
+      '</p>'+
+      '<p><a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+      'Message on Facebook</a> '+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+        for (var i = 0; i < locations.length; i++) {
+          var location = locations[i];
+          
+           var infowindow = new google.maps.InfoWindow({
+                content: contentString
+           });
+           
+          var marker = new google.maps.Marker({
+            position: {lat: location[1], lng: location[2]},
+            map: map,
+            icon: image,
+            title: location[i],
+            zIndex: location[i]
+          });
+          
+         marker.addListener('click', function() {
+                infowindow.open(map, marker);
+         });
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0QPcphTjwIfF6uxfkPbZr6xlnakmlbx4&callback=initMap">
+    </script>
+  </body>
+</html>
