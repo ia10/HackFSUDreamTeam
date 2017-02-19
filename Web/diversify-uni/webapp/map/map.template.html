@@ -64,19 +64,18 @@
       '<div id="bodyContent">'+
       '<p>Country: <b>Australia</b> </br> Languages: <b>Chinese</b> and <b>Japanese</br> ' +
       '</p>'+
-      '<p><a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-      'Message on Facebook</a> '+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
       '</p>'+
       '</div>'+
       '</div>';
 
         for (var i = 0; i < locations.length; i++) {
           var location = locations[i];
-          
+
            var infowindow = new google.maps.InfoWindow({
                 content: contentString
            });
-           
+
           var marker = new google.maps.Marker({
             position: {lat: location[1], lng: location[2]},
             map: map,
@@ -84,7 +83,7 @@
             title: location[i],
             zIndex: location[i]
           });
-          
+
          marker.addListener('click', function() {
                 infowindow.open(map, marker);
          });
