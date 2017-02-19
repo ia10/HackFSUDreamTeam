@@ -8,7 +8,6 @@
       #map {
         height: 100%;
       }
-
       html, body {
         height: 100%;
         margin: 0;
@@ -19,17 +18,13 @@
   <body>
     <div id="map"></div>
     <script>
-
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 1,
-          center: {lat: -33.9, lng: 151.2}
+          zoom: 2,
+          center: {lat: 26.8206, lng: 30.8025}
         });
-
         setMarkers(map);
         }
-
-
         var locations = [
         ['Belgium', 50, 51, 4],
         ['Brazil', -14.23, -51.92, 5],
@@ -41,53 +36,212 @@
         ['Chile', -35.67, -71.542, 8],
         ['Australia',  -25.27, 133.77, 9]
         ];
-
       function setMarkers(map) {
         // Adds markers to the map.
-
         // Marker sizes are expressed as a Size of X,Y where the origin of the image
         // (0,0) is located in the top left of the image.
-
         // Origins, anchor positions and coordinates of the marker increase in the X
         // direction to the right and in the Y direction down.
-        var image = {
-          url: 'https://ianannasetech.files.wordpress.com/2017/02/3.jpg',
+        
+        var image1 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/belgium.jpg',
           size: new google.maps.Size(40, 40),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(0, 40)
         };
 
-       var contentString = '<div id="content">'+
+        var image2 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/brazil.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+        };
+
+        var image3 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/china.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+        };
+
+        var image4 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/pakistan.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+        };
+
+        var image5 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/somalia1.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+        };
+
+        var image6 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/rwanda.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+        };
+
+        var image7 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/mali.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+        };
+
+        var image8 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/chile.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+        };
+
+        var image9 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/australia.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+        };
+
+        var images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
+
+       var contentString1 = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h1 id="firstHeading" class="firstHeading">John Doe</h1>'+
+      '<h1 id="firstHeading" class="firstHeading">John Fisher</h1>'+
       '<div id="bodyContent">'+
-      '<p>Country: <b>Australia</b> </br> Languages: <b>Chinese</b> and <b>Japanese</br> ' +
+      '<p>Country: <b>Belgium</b> </br> Languages: <b>Dutch</b> and <b>French</br> ' +
       '</p>'+
-      '<p><a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-      'Message on Facebook</a> '+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
       '</p>'+
       '</div>'+
       '</div>';
 
+      var contentString2 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Fernando Rodriguez</h1>'+
+      '<div id="bodyContent">'+
+      '<p>Country: <b>Brazil</b> </br> Languages: <b>Spanish</b> and <b>Portuguese</br> ' +
+      '</p>'+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+      var contentString3 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Alex Zo</h1>'+
+      '<div id="bodyContent">'+
+      '<p>Country: <b>China</b> </br> Languages: <b>Chinese</b> and <b>Standard Mandarin</br> ' +
+      '</p>'+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+      var contentString4 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Raj Roberts</h1>'+
+      '<div id="bodyContent">'+
+      '<p>Country: <b>Pakistan</b> </br> Languages: <b>Urdu</b> and <b>English</br> ' +
+      '</p>'+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+      var contentString5 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Frank Sudo</h1>'+
+      '<div id="bodyContent">'+
+      '<p>Country: <b>Somalia</b> </br> Languages: <b>Somali</b> and <b>Arabic</br> ' +
+      '</p>'+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+      var contentString6 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Jessica Frontier</h1>'+
+      '<div id="bodyContent">'+
+      '<p>Country: <b>Rwanda</b> </br> Languages: <b>Kinyarwanda</b> and <b>Swahili</br> ' +
+      '</p>'+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+      var contentString7 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Maria Black</h1>'+
+      '<div id="bodyContent">'+
+      '<p>Country: <b>Chile</b> </br> Languages: <b>Spanish</b> and <b>Portuguese</br> ' +
+      '</p>'+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+      var contentString8 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Tamia Johnson</h1>'+
+      '<div id="bodyContent">'+
+      '<p>Country: <b>Mali</b> </br> Languages: <b>Malic</b> and <b>French</br> ' +
+      '</p>'+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+      var contentString9 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Katie Marshall</h1>'+
+      '<div id="bodyContent">'+
+      '<p>Country: <b>Australia</b> </br> Languages: <b>Italian</b> and <b>Cantonese</br> ' +
+      '</p>'+
+      '<p>  <a href="https://www.messenger.com/t/allison.kast.1" target="_blank"><img src="http://d33x6c2gojonez.cloudfront.net/wp-content/uploads/sites/530/2016/12/04180924/private-message-on-facebook.png" alt="Facebook Messenger" width="20" height="20" class="alignnone size-full wp-image-29137"> Chat on Messenger!</a>'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+      var contentStringArr = [contentString1, contentString2, contentString3, contentString4, contentString5, contentString6, contentString7, contentString8, contentString9]
+
+      function bindInfoWindow(marker, map, infowindow, html) {
+    marker.addListener('click', function() {
+        infowindow.setContent(html);
+        infowindow.open(map, this);
+    });
+} 
+
         for (var i = 0; i < locations.length; i++) {
           var location = locations[i];
-          
            var infowindow = new google.maps.InfoWindow({
-                content: contentString
+                content: contentStringArr[i]
            });
-           
           var marker = new google.maps.Marker({
             position: {lat: location[1], lng: location[2]},
             map: map,
-            icon: image,
+            icon: images[i],
+            info: contentStringArr[i],
             title: location[i],
             zIndex: location[i]
           });
-          
-         marker.addListener('click', function() {
-                infowindow.open(map, marker);
-         });
+
+         bindInfoWindow(marker, map, infowindow, contentStringArr[i]);
+                
+         
         }
       }
     </script>
