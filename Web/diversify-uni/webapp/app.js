@@ -14,8 +14,8 @@ import user from './user';
 
 const REQUIRES = [
   home,
-  user
-  // signup,
+  user,
+  signup,
   // login,
   // map
 ];
