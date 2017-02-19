@@ -50,12 +50,22 @@
 
         // Origins, anchor positions and coordinates of the marker increase in the X
         // direction to the right and in the Y direction down.
-        var image = {
+        var image1 = {
           url: 'https://ianannasetech.files.wordpress.com/2017/02/3.jpg',
           size: new google.maps.Size(40, 40),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(0, 40)
         };
+
+       var image2 = {
+          url: 'https://d38zhw9ti31loc.cloudfront.net/wp-content/uploads/2013/07/Crystal-headshot-new.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+       }
+
+       var images = [image1, image2];
+
 
        var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
@@ -79,7 +89,7 @@
           var marker = new google.maps.Marker({
             position: {lat: location[1], lng: location[2]},
             map: map,
-            icon: image,
+            icon: images[i],
             title: location[i],
             zIndex: location[i]
           });
