@@ -42,6 +42,7 @@
         // (0,0) is located in the top left of the image.
         // Origins, anchor positions and coordinates of the marker increase in the X
         // direction to the right and in the Y direction down.
+<<<<<<< HEAD
         
         var image1 = {
           url: 'https://ianannasetech.files.wordpress.com/2017/02/belgium.jpg',
@@ -80,11 +81,16 @@
 
         var image6 = {
           url: 'https://ianannasetech.files.wordpress.com/2017/02/rwanda.jpg',
+=======
+        var image1 = {
+          url: 'https://ianannasetech.files.wordpress.com/2017/02/3.jpg',
+>>>>>>> 1dbf28c64a144e7f7b971669ab7955db5a7904ce
           size: new google.maps.Size(40, 40),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(0, 40)
         };
 
+<<<<<<< HEAD
         var image7 = {
           url: 'https://ianannasetech.files.wordpress.com/2017/02/mali.jpg',
           size: new google.maps.Size(40, 40),
@@ -169,6 +175,19 @@
       '</div>';
 
       var contentString6 = '<div id="content">'+
+=======
+       var image2 = {
+          url: 'https://d38zhw9ti31loc.cloudfront.net/wp-content/uploads/2013/07/Crystal-headshot-new.jpg',
+          size: new google.maps.Size(40, 40),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 40)
+       }
+
+       var images = [image1, image2];
+
+
+       var contentString = '<div id="content">'+
+>>>>>>> 1dbf28c64a144e7f7b971669ab7955db5a7904ce
       '<div id="siteNotice">'+
       '</div>'+
       '<h1 id="firstHeading" class="firstHeading">Jessica Frontier</h1>'+
@@ -227,21 +246,38 @@
 
         for (var i = 0; i < locations.length; i++) {
           var location = locations[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1dbf28c64a144e7f7b971669ab7955db5a7904ce
            var infowindow = new google.maps.InfoWindow({
                 content: contentStringArr[i]
            });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1dbf28c64a144e7f7b971669ab7955db5a7904ce
           var marker = new google.maps.Marker({
             position: {lat: location[1], lng: location[2]},
             map: map,
             icon: images[i],
+<<<<<<< HEAD
             info: contentStringArr[i],
+=======
+>>>>>>> 1dbf28c64a144e7f7b971669ab7955db5a7904ce
             title: location[i],
             zIndex: location[i]
           });
 
+<<<<<<< HEAD
          bindInfoWindow(marker, map, infowindow, contentStringArr[i]);
                 
          
+=======
+         marker.addListener('click', function() {
+                infowindow.open(map, marker);
+         });
+>>>>>>> 1dbf28c64a144e7f7b971669ab7955db5a7904ce
         }
       }
     </script>
